@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Stock Price Tracker - AVL Tree</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div>
+            <h1>📈 Live Stock Tracker</h1>
+            <p>Real-time stock management using an AVL Tree</p>
+        </div>
+
+        <div class="live-status">
+            <span class="status-dot"></span>
+            LIVE
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Statistics -->
+        <section class="stats">
+
+            <div class="stat-card">
+                <span>💰 Cheapest</span>
+                <h2 id="cheapest">--</h2>
+                <p id="cheapestName">--</p>
+            </div>
+
+            <div class="stat-card">
+                <span>🚀 Most Expensive</span>
+                <h2 id="expensive">--</h2>
+                <p id="expensiveName">--</p>
+            </div>
+
+            <div class="stat-card">
+                <span>📊 Median Price</span>
+                <h2 id="median">--</h2>
+                <p>AVL Tree</p>
+            </div>
+
+            <div class="stat-card">
+                <span>📦 Stocks</span>
+                <h2 id="stockCount">0</h2>
+                <p>Tracked stocks</p>
+            </div>
+
+        </section>
+
+        <!-- Add Stock -->
+        <section class="panel">
+
+            <h2>Add Stock</h2>
+
+            <div class="form">
+
+                <input
+                    type="text"
+                    id="symbolInput"
+                    placeholder="Symbol (e.g. TSLA)"
+                    maxlength="6"
+                >
+
+                <input
+                    type="text"
+                    id="nameInput"
+                    placeholder="Company Name"
+                >
+
+                <input
+                    type="number"
+                    id="priceInput"
+                    placeholder="Price"
+                    min="0"
+                    step="0.01"
+                >
+
+                <button onclick="addStock()">
+                    + Add Stock
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- Stock Table -->
+        <section class="panel">
+
+            <div class="panel-header">
+                <h2>📋 Live Market</h2>
+
+                <button
+                    class="update-button"
+                    onclick="updatePrices()"
+                >
+                    🔄 Update Prices
+                </button>
+            </div>
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Symbol</th>
+                            <th>Company</th>
+                            <th>Price</th>
+                            <th>Change</th>
+                            <th>AVL Height</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="stockTable">
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+        <!-- AVL Information -->
+        <section class="panel avl-info">
+
+            <h2>🌳 AVL Tree Information</h2>
+
+            <div class="info-grid">
+
+                <div>
+                    <strong>Data Structure</strong>
+                    <p>Self-balancing Binary Search Tree</p>
+                </div>
+
+                <div>
+                    <strong>Ordering</strong>
+                    <p>Stock price</p>
+                </div>
+
+                <div>
+                    <strong>Insert</strong>
+                    <p>O(log n)</p>
+                </div>
+
+                <div>
+                    <strong>Delete</strong>
+                    <p>O(log n)</p>
+                </div>
+
+                <div>
+                    <strong>Search</strong>
+                    <p>O(log n)</p>
+                </div>
+
+                <div>
+                    <strong>Balance Factor</strong>
+                    <p>-1, 0, +1</p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>AVL Tree Stock Tracker • Real-time Data Structures Project</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
